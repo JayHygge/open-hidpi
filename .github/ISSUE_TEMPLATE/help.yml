@@ -1,0 +1,25 @@
+name: 设备适配或求助 / Device help
+description: 不会使用 AI 也可以在这里求助 / No AI experience needed
+body:
+  - type: markdown
+    attributes:
+      value: 当前程序仅允许 M1 Pro；其他芯片先讨论适配。不要上传原始系统报告、state.json、备份、序列号、UUID 或凭据。
+  - type: textarea
+    id: setup
+    attributes:
+      label: 设备与连接 / Setup
+      description: 芯片、macOS、显示器型号、原生尺寸、刷新率、连接线／扩展坞；不填序列号。
+    validations:
+      required: true
+  - type: textarea
+    id: goal
+    attributes:
+      label: 想达到的效果与当前问题 / Goal and problem
+      description: 目标桌面尺寸、现象、操作步骤；是否使用过其他显示配置工具。
+    validations:
+      required: true
+  - type: textarea
+    id: version
+    attributes:
+      label: 版本与诊断 / Version and diagnostics
+      description: Release／提交号、脱敏错误片段；未运行过工具也可以提交。

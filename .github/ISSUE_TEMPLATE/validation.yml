@@ -1,0 +1,20 @@
+name: 设备验证记录 / Hardware report
+description: 分享成功或失败的实测 / Share a successful or failed test
+body:
+  - type: markdown
+    attributes:
+      value: 只报告你实际做过的操作；不要为填写表单而执行系统修改。分享前删除个人路径、账号、序列号、UUID 和凭据。
+  - type: textarea
+    id: setup
+    attributes:
+      label: 测试版本与设备 / Version and setup
+      description: 提交号、芯片、macOS、显示器型号与连接、原生尺寸和刷新率。
+    validations:
+      required: true
+  - type: textarea
+    id: results
+    attributes:
+      label: 步骤、结果与恢复 / Steps, results, and recovery
+      description: 原状态、执行操作、桌面／渲染尺寸、刷新率、是否恢复成功；安装、切换、恢复、拔插、睡眠和重启分开报告。未测试写明未测试。
+    validations:
+      required: true

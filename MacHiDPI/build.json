@@ -1,0 +1,6 @@
+{
+  "schema": 1,
+  "target": "arm64-apple-macos14.0",
+  "sourceSHA256": "2d0afe457080b3a47645b048c9fc19b338fd0063fbc2563a4dc3972498e4d9fc",
+  "binarySHA256": "043d0f7657bca2cff500cdc8704c1910e5cbb301e05b889d090594e4fcec6f20"
+}

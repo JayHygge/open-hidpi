@@ -1,0 +1,30 @@
+.DS_Store
+**/.DS_Store
+work/
+private/
+__pycache__/
+
+# Local credentials never belong in this project or its release inputs.
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+
+# 本机原始取证与恢复资料：保留本地，不提交。
+audit/evidence.json
+audit/cleanup-20261102/*
+!audit/cleanup-20261102/REPORT.md
+!audit/cleanup-20261102/verification.json
+
+# 后续检查的本机原始证据（报告和只读查询源码可提交）。
+audit/recheck-*/evidence.json
+
+# 独立审计的本机原始数据与可重建编译产物。
+audit/recheck-*/background-items-comparison.json
+audit/recheck-*/bundle-evidence.json
+audit/recheck-*/supplemental-evidence.json
+audit/recheck-*/module-cache/
+audit/recheck-*/display-query
