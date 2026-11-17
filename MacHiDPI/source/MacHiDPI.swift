@@ -89,8 +89,10 @@ func selectedDisplay(_ arguments: [String], interactive: Bool) throws -> Display
 func desktopSizes(width: Int, height: Int) throws -> [(width: Int, height: Int)] {
     try require(width > 0 && height > 0 && width <= 16384 && height <= 16384, "分辨率参数无效。")
     // Eleven choices, from native desktop size to twice the apparent UI size.
-    return stride(from: 100, through: 50, by: -5).map { percentage in
-        (Int((Double(width) * Double(percentage) / 100).rounded()), Int((Double(height) * Double(percentage) / 100).rounded()))
+    return stride(from: 100, through: 50, by: -5).map { percentage -> (width: Int, height: Int) in
+        let w = Int((Double(width) * Double(percentage) / 100).rounded())
+        let h = Int((Double(height) * Double(percentage) / 100).rounded())
+        return (w, h)
     }
 }
 func makeConfiguration(width: Int, height: Int, sizes: [(width: Int, height: Int)]? = nil) throws -> Data {
@@ -445,8 +447,9 @@ func main() throws {
     }
     let display = try selectedDisplay(arguments, interactive: ["install", "restore", "status", "reconnect", "enable", "persist"].contains(action) && isatty(STDIN_FILENO) != 0)
     if ["install", "reconnect", "enable", "persist"].contains(action) {
+        let verifiedChips = ["Apple M1 Pro", "Apple M6"]
         let (code, model, _) = try run("/usr/sbin/sysctl", ["-n", "machdep.cpu.brand_string"])
-        try require(code == 0 && text(model) == "Apple M1 Pro", "本工具目前只验证并允许 Apple M1 Pro；其他芯片请勿直接使用。")
+        try require(code == 0 && verifiedChips.contains(text(model)), "本工具目前只验证并允许 \(verifiedChips.joined(separator: "、"))；其他芯片请勿直接使用。")
     }
     switch action {
     case "status": try status(display, native: native)

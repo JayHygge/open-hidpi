@@ -4,13 +4,13 @@
 
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 ![macOS](https://img.shields.io/badge/platform-macOS-black.svg)
-![M1 Pro Preview](https://img.shields.io/badge/M1%20Pro-preview-orange.svg)
+![M1 Pro / M6 Preview](https://img.shields.io/badge/M1%20Pro%20%2F%20M6-preview-orange.svg)
 
 **[Download MacHiDPI.zip](https://github.com/JayHygge/open-hidpi/releases/download/v0.1.0-preview/MacHiDPI.zip)** · [Usage guide](MacHiDPI/使用说明.md) · [中文](README.md) · [Get help](https://github.com/JayHygge/open-hidpi/issues/new/choose)
 
 Blurry text on an external monitor? Missing the scaling option that makes your Mac comfortable to use? **open-hidpi is a free, open-source BetterDisplay alternative focused on native HiDPI and custom display resolutions.** Written in Swift, it inspects modes, generates scaling configurations, switches resolutions, and restores managed configuration. No paid license, SIP changes, resident process, or startup item required.
 
-**Currently an M1 Pro preview.** Enabling, installing, reconnecting, and saving modes are restricted to Apple M1 Pro. For other hardware, use the source as a starting point with your own AI, or open an issue for help. Existing evidence covers one MacBook Pro and two monitor models; see [Compatibility](#compatibility-and-hardware-evidence).
+**Currently an M1 Pro / M6 preview.** Enabling, installing, reconnecting, and saving modes are restricted to Apple M1 Pro and Apple M6. For other hardware, use the source as a starting point with your own AI, or open an issue for help. Existing evidence covers one M1 Pro MacBook Pro, one M6 MacBook Pro, and three monitor models; see [Compatibility](#compatibility-and-hardware-evidence).
 
 ## What you get
 
@@ -64,6 +64,7 @@ Mode operations also include `enable`, `install`, `reconnect`, `persist`, and `r
 | Setup | What has been verified |
 | --- | --- |
 | M1 Pro MacBook Pro · macOS 27.2 · Dell P3424WE · 3440×1440 at 60 Hz | Direct activation of an existing 2× mode, recognition of all 11 installed presets, and one hotplug check each at two desktop sizes |
+| M6 MacBook Pro · macOS 27.0 · PHL 273V7 · 1920×1080 at 75 Hz | Status, read-only checks, and direct activation of an existing 2× mode verified; install, restore, hotplug, sleep, and reboot untested |
 | The same MacBook Pro · two MB14FCD panels in a Duo setup · 1920×1200 each at 60 Hz | A dedicated test executable switched both screens through 10 modes each and checked native-desktop hotplug retention; the integrated tool passed build, offline, and read-only checks |
 | Other chips, macOS versions, or monitors | Compatibility has not been established; hardware reports and adaptation PRs are welcome |
 
@@ -87,7 +88,7 @@ Problem and steps already tried: [...].
 
 Compare the hardware differences. Start with read-only diagnostics and an
 adaptation plan; do not switch modes or change system settings.
-Do not merely remove the M1 Pro check or treat a successful build as compatibility.
+Do not merely remove the chip check or treat a successful build as compatibility.
 Before editing, explain the impact, recovery path, and tests, then wait for my
 confirmation. Redact personal information from any logs intended for sharing.
 ```
@@ -98,7 +99,7 @@ confirmation. Redact personal information from any logs intended for sharing.
 
 ### Can it replace BetterDisplay?
 
-For **external-display HiDPI, scaling presets, and mode verification**, open-hidpi offers a free, inspectable implementation you can modify. The current direct-use target is M1 Pro. It does not provide brightness/DDC controls, HDR brightness boosts, virtual screens, or a full display-management suite. If you need those features, see [BetterDisplay](https://github.com/waydabber/BetterDisplay). The projects are unaffiliated.
+For **external-display HiDPI, scaling presets, and mode verification**, open-hidpi offers a free, inspectable implementation you can modify. The current direct-use targets are M1 Pro and M6. It does not provide brightness/DDC controls, HDR brightness boosts, virtual screens, or a full display-management suite. If you need those features, see [BetterDisplay](https://github.com/waydabber/BetterDisplay). The projects are unaffiliated.
 
 ### How does it relate to one-key-hidpi?
 
