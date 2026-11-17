@@ -4,13 +4,13 @@
 
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 ![macOS](https://img.shields.io/badge/platform-macOS-black.svg)
-![M1 Pro Preview](https://img.shields.io/badge/M1%20Pro-preview-orange.svg)
+![M1 Pro / M6 Preview](https://img.shields.io/badge/M1%20Pro%20%2F%20M6-preview-orange.svg)
 
 **[下载 MacHiDPI.zip](https://github.com/JayHygge/open-hidpi/releases/download/v0.1.0-preview/MacHiDPI.zip)** · [使用说明](MacHiDPI/使用说明.md) · [English](README.en.md) · [问题与适配](https://github.com/JayHygge/open-hidpi/issues/new/choose)
 
 外接显示器上的文字发虚，系统又缺少合适的缩放档位？**open-hidpi 聚焦 Mac 外接屏的原生 HiDPI 与自定义分辨率，是面向这部分需求的免费开源 BetterDisplay 替代方案。** 它用 Swift 实现模式检测、配置生成、切换与恢复：不需要付费许可证，不需要关闭 SIP，也没有常驻进程或启动项。
 
-**当前为 M1 Pro 预览版。** 启用、安装、重连和保存模式目前仅允许 Apple M1 Pro；其他设备可先阅读源码，结合自己的 AI 分析适配，也可以直接提 Issue。已有验证来自一台 MacBook Pro、两种显示器型号；[实测范围](#兼容性与实测范围)见下文。
+**当前为 M1 Pro / M6 预览版。** 启用、安装、重连和保存模式目前仅允许 Apple M1 Pro 与 Apple M6；其他设备可先阅读源码，结合自己的 AI 分析适配，也可以直接提 Issue。已有验证来自一台 M1 Pro MacBook Pro、一台 M6 MacBook Pro 和三种显示器型号；[实测范围](#兼容性与实测范围)见下文。
 
 ## 为什么用 open-hidpi
 
@@ -64,6 +64,7 @@ HiDPI 让 macOS 以更高像素密度绘制文字和界面，再缩放到显示�
 | 环境 | 已验证的结果 |
 | --- | --- |
 | M1 Pro MacBook Pro · macOS 27.2 · Dell P3424WE · 3440×1440 / 60 Hz | 直接开启已有 2× 模式、安装后识别全部 11 档、两个桌面档位各一次拔插保持 |
+| M6 MacBook Pro · macOS 27.0 · PHL 273V7 · 1920×1080 / 75 Hz | 状态、只读检查与已有 2× 模式的直接开启核验通过；安装、恢复、拔插、睡眠、重启未验证 |
 | 同一台 MacBook Pro · Duo 两块 MB14FCD · 各 1920×1200 / 60 Hz | 专用执行程序完成两屏各 10 档切换及原生桌面档位拔插保持；整合版通过构建、离线和只读检查 |
 | 其他芯片、macOS 或显示器 | 未建立兼容性结论；欢迎带设备信息提 Issue 或贡献适配 |
 
@@ -86,7 +87,7 @@ docs/DEVELOPMENT.md 和 MacHiDPI/source/MacHiDPI.swift。
 问题与已尝试步骤：［填写］。
 
 先比较设备差异，提出只读诊断和适配方案；不要直接切屏或修改系统。
-不要只删除 M1 Pro 检查，也不要把编译成功视为兼容性验证。
+不要只删除芯片检查，也不要把编译成功视为兼容性验证。
 修改前解释影响、恢复方法和测试步骤，等我确认。公开日志先脱敏。
 ```
 
@@ -96,7 +97,7 @@ docs/DEVELOPMENT.md 和 MacHiDPI/source/MacHiDPI.swift。
 
 ### 可以替代 BetterDisplay 吗？
 
-如果你需要的是**外接屏 HiDPI、缩放档位与模式核验**，open-hidpi 提供一条免费开源、可自行修改的实现路径；当前直接使用范围仍是 M1 Pro。它不提供亮度／DDC 控制、HDR 增亮、虚拟屏或完整显示器管理套件。需要这些能力，可以了解 [BetterDisplay](https://github.com/waydabber/BetterDisplay)。两个项目没有隶属关系。
+如果你需要的是**外接屏 HiDPI、缩放档位与模式核验**，open-hidpi 提供一条免费开源、可自行修改的实现路径；当前直接使用范围是 M1 Pro 与 M6。它不提供亮度／DDC 控制、HDR 增亮、虚拟屏或完整显示器管理套件。需要这些能力，可以了解 [BetterDisplay](https://github.com/waydabber/BetterDisplay)。两个项目没有隶属关系。
 
 ### 和 one-key-hidpi 有什么关系？
 

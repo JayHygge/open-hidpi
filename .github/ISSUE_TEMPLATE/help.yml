@@ -3,7 +3,7 @@ description: 不会使用 AI 也可以在这里求助 / No AI experience needed
 body:
   - type: markdown
     attributes:
-      value: 当前程序仅允许 M1 Pro；其他芯片先讨论适配。不要上传原始系统报告、state.json、备份、序列号、UUID 或凭据。
+      value: 当前程序仅允许 M1 Pro 与 M6；其他芯片先讨论适配。不要上传原始系统报告、state.json、备份、序列号、UUID 或凭据。
   - type: textarea
     id: setup
     attributes:
